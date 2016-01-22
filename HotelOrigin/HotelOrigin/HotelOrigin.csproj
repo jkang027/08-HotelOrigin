@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewRoom.xaml.cs">
+      <DependentUpon>AddNewRoom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateCustomerInfo.xaml.cs">
       <DependentUpon>UpdateCustomerInfo.xaml</DependentUpon>
     </Compile>
     <Page Include="AddNewCustomerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

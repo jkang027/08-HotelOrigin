@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using HotelOrigin.Core;
 using HotelOrigin.Core.Domain.Repository;
 using HotelOrigin.Core.Domain;
+using HotelOrigin.Core.Repository;
 
 namespace HotelOrigin
 {
@@ -28,11 +29,14 @@ namespace HotelOrigin
             InitializeComponent();
             dataGrid.ItemsSource = CustomerRepository.GetAll();
         }
+
+        //Customer Management ###################################################################################################
         
         //On Window Closing
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             CustomerRepository.SaveToDisk();
+            RoomRepository.SaveToDisk();
         }
 
         //DataGrid Currently Selected
@@ -70,6 +74,19 @@ namespace HotelOrigin
             {
                 MessageBox.Show("You did not select a customer to delete.");
             }
+        }
+
+        //Room Management #######################################################################################################
+
+        private void button_ClickAddNewRoom(object sender, RoutedEventArgs e)
+        {
+            AddNewRoom newRoom = new AddNewRoom();
+            newRoom.ShowDialog();
+        }
+
+        private void button_ClickDeleteExistingRoom(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -20,7 +20,15 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Room Management" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="139" Margin="-2,-2,-83,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dataGridRoom" Margin="10,50,10,10" Grid.ColumnSpan="2" ColumnWidth="SizeToHeader" IsReadOnly="True" SelectionChanged="dataGrid_SelectionChanged" MouseDoubleClick="dataGrid_MouseDoubleClick"/>
+                    <Button x:Name="buttonAddNewRoom" Content="Add New Room" Margin="10,10,7,0" Height="35" VerticalAlignment="Top" Click="button_ClickAddNewRoom"/>
+                    <Button x:Name="buttonDeleteRoom" Content="Delete Existing Room" Margin="7,10,10,0" Height="35" VerticalAlignment="Top" Grid.Column="1" Click="button_ClickDeleteExistingRoom"/>
+                </Grid>
             </TabItem>
         </TabControl>
 
