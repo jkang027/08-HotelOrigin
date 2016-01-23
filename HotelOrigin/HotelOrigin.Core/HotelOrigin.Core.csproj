@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Customers.cs" />
+    <Compile Include="Domain\Reservations.cs" />
     <Compile Include="Domain\Rooms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\ReservationRepository.cs" />
     <Compile Include="Repository\RoomRepository.cs" />
   </ItemGroup>
   <ItemGroup>

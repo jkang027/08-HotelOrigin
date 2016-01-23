@@ -19,6 +19,7 @@ namespace HotelOrigin
         {
             CustomerRepository.LoadFromDisk();
             RoomRepository.LoadFromDisk();
+            ReservationRepository.LoadFromDisk();
         }
     }
 }

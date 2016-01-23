@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 
-
 namespace HotelOrigin.Core.Repository
 {
     public class RoomRepository
@@ -20,7 +19,7 @@ namespace HotelOrigin.Core.Repository
         {
             Room newRoom = new Room();
 
-            newRoom.Id = Room.IdCounter;
+            newRoom.Id = Room.RoomsIdCounter;
 
             newRoom.RoomNumber = roomNumber;
             newRoom.NumberOfBeds = numberOfBeds;

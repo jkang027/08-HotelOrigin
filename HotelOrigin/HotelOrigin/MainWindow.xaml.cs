@@ -28,33 +28,33 @@ namespace HotelOrigin
         {
             InitializeComponent();
             dataGrid.ItemsSource = CustomerRepository.GetAll();
+            dataGridRoom.ItemsSource = RoomRepository.GetAll();
+            dataGridReservations.ItemsSource = ReservationRepository.GetAll();
         }
 
-        //Customer Management ###################################################################################################
-        
         //On Window Closing
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             CustomerRepository.SaveToDisk();
             RoomRepository.SaveToDisk();
+            ReservationRepository.SaveToDisk();
         }
 
         //DataGrid Currently Selected
         public static Customer currentlySelectedCustomer = null;
+        public static Room currentlySelectedRoom = null;
+        public static Reservation currentlySelectedReservation = null;
 
         //DataGrid Selection changed
         public void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             currentlySelectedCustomer = (Customer)dataGrid.SelectedItem;
+            currentlySelectedRoom = (Room)dataGridRoom.SelectedItem;
+            currentlySelectedReservation = (Reservation)dataGridReservations.SelectedItem;
         }
 
-        //DataGrid Event Double Click to Edit/Update Customer Information
-        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            UpdateCustomerInfo updateCustomer = new UpdateCustomerInfo();
-            updateCustomer.ShowDialog();
-        }
-
+        //Customer Management ###################################################################################################
+        
         //Button Add New Customer
         private void button_ClickAddNewCustomer(object sender, RoutedEventArgs e)
         {
@@ -76,17 +76,77 @@ namespace HotelOrigin
             }
         }
 
+        //DataGrid Event Double Click to Edit/Update Customer Information
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                UpdateCustomerInfo updateCustomer = new UpdateCustomerInfo();
+                updateCustomer.ShowDialog();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("There was no selected customer to edit.");
+            }
+        }
+
         //Room Management #######################################################################################################
 
+        //Button Add New Room
         private void button_ClickAddNewRoom(object sender, RoutedEventArgs e)
         {
             AddNewRoom newRoom = new AddNewRoom();
             newRoom.ShowDialog();
         }
-
+        
+        //Button Delete Existing Room
         private void button_ClickDeleteExistingRoom(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                ConfirmDeletionRoom deleteRoom = new ConfirmDeletionRoom();
+                deleteRoom.ShowDialog();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("You did not select a room to delete.");
+            }
+        }
 
+        //DataGrid Event Double Click to Edit/Update Room Information
+        private void dataGridRoom_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                UpdateExistingRoom updateRoom = new UpdateExistingRoom();
+                updateRoom.ShowDialog();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("There was no selected room to edit.");
+            }
+        }
+
+        //Reservation Management ###################################################################################################
+
+        //Button Add New Reservation
+        private void buttonAddNewReservation_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewReservation newReservation = new AddNewReservation();
+            newReservation.ShowDialog();
+        }
+
+        private void buttonCancelReservation_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ConfirmCancelReservation cancelReservation = new ConfirmCancelReservation();
+                cancelReservation.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("There was no selected reservation to cancel.");
+            }
         }
     }
 }

@@ -12,14 +12,14 @@ namespace HotelOrigin.Core.Domain.Repository
 {
     public class CustomerRepository
     {
-        private static ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
+        public static ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
 
         //Create
         public static Customer Create(string lastName, string firstName, string telephone, string emailAddress)
         {
             Customer newCustomer = new Customer();
 
-            newCustomer.Id = Customer.IdCounter;
+            newCustomer.Id = Customer.CustomersIdCounter;
             newCustomer.FirstName = firstName;
             newCustomer.LastName = lastName;
             newCustomer.TelephoneNumber = telephone;

@@ -7,81 +7,81 @@ using System.Threading.Tasks;
 
 namespace HotelOrigin.Core.Domain
 {
-    public class Room : INotifyPropertyChanged
+    public class Reservation : INotifyPropertyChanged
     {
-        public static int RoomsIdCounter = 0;
+        public static int ReservationsIdCounter = 0;
 
-        public Room()
+        public Reservation()
         {
-            RoomsIdCounter++;
+            ReservationsIdCounter++;
         }
-        
+
         public int Id { get; set; }
 
-        private int roomNumber;
-        public int RoomNumber
+        private object customer;
+        public object Customer
         {
             get
             {
-                return roomNumber;
+                return customer;
             }
             set
             {
-                if (value != roomNumber)
+                if (value != customer)
                 {
-                    roomNumber = value;
-                    OnPropertyChanged("RoomNumber");
+                    customer = value;
+                    OnPropertyChanged("Customers");
                 }
             }
         }
 
-        private int numberOfBeds;
-        public int NumberOfBeds
+        private object room;
+        public object Room
         {
             get
             {
-                return numberOfBeds;
+                return room;
             }
             set
             {
-                if (value != numberOfBeds)
+                if (value != room)
                 {
-                    numberOfBeds = value;
-                    OnPropertyChanged("NumberOfBeds");
+                    room = value;
+                    OnPropertyChanged("Rooms");
                 }
             }
         }
 
-        private bool hasTv;
-        public bool HasTv
+        private DateTime checkInDate;
+        public DateTime CheckInDate
         {
             get
             {
-                return hasTv;
+                return checkInDate;
             }
             set
             {
-                if (value != hasTv)
+                if (value != checkInDate)
                 {
-                    hasTv = value;
-                    OnPropertyChanged("HasTv");
+                    checkInDate = value;
+                    OnPropertyChanged("CheckInDate");
                 }
             }
         }
-
-        private bool smokingAllowed;
-        public bool SmokingAllowed
+        
+        private DateTime checkOutDate;
+        public DateTime CheckOutDate
         {
             get
             {
-                return smokingAllowed;
+                return checkOutDate;
             }
             set
             {
-                if (value != smokingAllowed)
+                if (value != checkOutDate)
                 {
-                    smokingAllowed = value;
-                    OnPropertyChanged("SmokingAllowed");
+                    checkOutDate = value;
+                    OnPropertyChanged("CheckOutDate");
                 }
             }
         }

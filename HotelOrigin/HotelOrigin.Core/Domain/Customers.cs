@@ -9,11 +9,11 @@ namespace HotelOrigin.Core.Domain
 {
     public class Customer : INotifyPropertyChanged
     {
-        public static int IdCounter = 0;
+        public static int CustomersIdCounter = 0;
 
         public Customer()
         {
-            IdCounter++;
+            CustomersIdCounter++;
         }
 
         public int Id { get; set; }

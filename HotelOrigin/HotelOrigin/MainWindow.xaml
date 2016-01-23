@@ -8,7 +8,7 @@
         Title="Hotel Origin" Closing="Window_Closing" MinWidth="768" MinHeight="535" Width="768" Height="535">
     <Grid>
         <TabControl x:Name="tabControl">
-            <TabItem Header="Customer Management">
+            <TabItem Header="Customer Management" Width="160">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -19,18 +19,28 @@
                     <Button x:Name="buttonDeleteCustomer" Content="Delete Customer" Margin="7,10,10,0" Height="35" VerticalAlignment="Top" Grid.Column="1" Click="buttonDeleteCustomer_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Room Management" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="139" Margin="-2,-2,-83,0">
+            <TabItem Header="Room Management" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="160" Margin="-2,-2,-83,0">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="dataGridRoom" Margin="10,50,10,10" Grid.ColumnSpan="2" ColumnWidth="SizeToHeader" IsReadOnly="True" SelectionChanged="dataGrid_SelectionChanged" MouseDoubleClick="dataGrid_MouseDoubleClick"/>
+                    <DataGrid x:Name="dataGridRoom" Margin="10,50,10,10" Grid.ColumnSpan="2" ColumnWidth="SizeToHeader" IsReadOnly="True" SelectionChanged="dataGrid_SelectionChanged" MouseDoubleClick="dataGridRoom_MouseDoubleClick"/>
                     <Button x:Name="buttonAddNewRoom" Content="Add New Room" Margin="10,10,7,0" Height="35" VerticalAlignment="Top" Click="button_ClickAddNewRoom"/>
                     <Button x:Name="buttonDeleteRoom" Content="Delete Existing Room" Margin="7,10,10,0" Height="35" VerticalAlignment="Top" Grid.Column="1" Click="button_ClickDeleteExistingRoom"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Reservation Management" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="165" Margin="-2,-2,-110,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dataGridReservations" Margin="10,50,10,10" Grid.ColumnSpan="2" IsReadOnly="True" SelectionChanged="dataGrid_SelectionChanged"/>
+                    <Button x:Name="buttonAddNewReservation" Content="Add New Reservation" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="357" Height="35" Click="buttonAddNewReservation_Click"/>
+                    <Button x:Name="buttonCancelReservation" Content="Cancel Existing Reservation" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="357" Height="35" Click="buttonCancelReservation_Click"/>
+                </Grid>
+            </TabItem>
         </TabControl>
-
     </Grid>
 </Window>

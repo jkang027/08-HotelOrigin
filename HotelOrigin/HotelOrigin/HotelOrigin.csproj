@@ -55,13 +55,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewReservation.xaml.cs">
+      <DependentUpon>AddNewReservation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddNewRoom.xaml.cs">
       <DependentUpon>AddNewRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmCancelReservation.xaml.cs">
+      <DependentUpon>ConfirmCancelReservation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmDeletionRoom.xaml.cs">
+      <DependentUpon>ConfirmDeletionRoom.xaml</DependentUpon>
     </Compile>
     <Compile Include="UpdateCustomerInfo.xaml.cs">
       <DependentUpon>UpdateCustomerInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateExistingRoom.xaml.cs">
+      <DependentUpon>UpdateExistingRoom.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddNewCustomerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewReservation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,7 +85,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ConfirmCancelReservation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ConfirmDeleteCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfirmDeletionRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,6 +116,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UpdateCustomerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateExistingRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
